@@ -15,7 +15,7 @@ use App\Http\Controllers\CategoriaController;
 */
 
 Route::get('/', function () {
-    return view('frontend.layouts.app');
+    return view('frontend.layouts.template');
 
 });
 

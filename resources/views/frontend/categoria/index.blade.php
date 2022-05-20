@@ -7,11 +7,11 @@
 
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Datatables</h5>
-                    <p>Add lightweight datatables to your project with using the <a
+                    <h5 class="card-title">Categorias</h5>
+                    {{-- <p>Add lightweight datatables to your project with using the <a
                             href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a>
                         library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable
-                    </p>
+                    </p> --}}
 
                     <!-- Table with stripped rows -->
                     <table class="table datatable">
@@ -19,9 +19,9 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Descripción</th>
+                                {{-- <th scope="col">Descripción</th>
                                 <th scope="col">Orden</th>
-                                <th scope="col">Acción</th>
+                                <th scope="col">Acción</th> --}}
                             </tr>
                         </thead>
                         <tbody>
@@ -40,9 +40,9 @@
                                         @endphp
 
                                     <td>{{ $cat->nombre }}</td>
-                                    <td>{{ $cat->descripcion }}</td>
+                                    {{-- <td>{{ $cat->descripcion }}</td>
                                     <td>{{ $cat->orden }}</td>
-                                    <td>2016-05-25</td>
+                                  --}}
                                 </tr>
                             @endforeach
                         </tbody>
