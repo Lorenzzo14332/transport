@@ -18,6 +18,15 @@
           </a>
         </li>
       </ul>
+      
+      <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="{{ route('subcategorias.index') }}">
+            <i class="bi bi-circle"></i><span>Subcategorias</span>
+          </a>
+        </li>
+      </ul>
+      
     </li><!-- End Components Nav -->
 
     <li class="nav-item">

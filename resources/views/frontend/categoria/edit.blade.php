@@ -33,8 +33,6 @@
                             @method('PUT')
                             @csrf
 
-
-
                             <div class="form-group">
                                 <label for="name">Nombre</label>
                                 <input type="text" name="nombre" id="nombre" value="{{$categoria->nombre}}"

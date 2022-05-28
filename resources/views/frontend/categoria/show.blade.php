@@ -23,7 +23,7 @@
 <div class="content-wrapper">
     <div class="page-header">
         <h3 class="page-title">
-            Productos que pertenecen a {{$categoria->nombre}}
+            Subcategorias que pertenecen a {{$categoria->nombre}}
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -41,15 +41,13 @@
 
                     <div class="d-flex justify-content-between">
                         <h4 class="card-title">Subcategoria de la categoría {{$categoria->nombre}}</h4>
-                        <div class="btn-group">
-                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                              {{-- agregar  es parte de la subcategoria--}}
-                                <a href="{{-- {{route('products.create')}} --}}" class="dropdown-item">Agregar</a>
-                            </div>
-                          </div>
+                        <div class="card-header">
+                            <li class="nav-item d-none d-lg-flex">
+                                <a class="nav-link" href="{{ route('subcategorias.create') }}">
+                                    <span class="btn btn-info">Nueva</span>
+                                </a>
+                            </li>
+                        </div>
                     </div>
 
                     <div class="table-responsive">
@@ -58,44 +56,26 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Nombre</th>
-                                    <th>Stock</th>
-                                    <th>Estado</th>
                                     <th>Categoría</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach ($category->products as $product) --}}
+                                @foreach ($categoria->sub_categorias as $subcat)
                                 <tr>
-                                    <th scope="row">{{-- {{$product->id}} --}}</th>
+                                    <th scope="row">{{$subcat->id}}</th>
                                     <td>
-                                        <a href="{{-- {{route('products.show',$product)}} --}}">{{-- {{$product->name}} --}}</a>
+                                        <a href="{{ route('subcategorias.show', $subcat) }}"> {{ $subcat->nombre }} </a>
                                     </td>
-                                    <td>{{-- {{$product->stock}} --}}</td>
-                                    {{-- @if ($product->status == 'ACTIVE') --}}
-                                    <td>
-                                        <a class="jsgrid-button btn btn-success" href="{{-- {{route('change.status.products', $product)}} --}}" title="Editar">
-                                            Activo <i class="fas fa-check"></i>
-                                        </a>
-                                    </td>
-                                    {{-- @else --}}
-                                    <td>
-                                        <a class="jsgrid-button btn btn-danger" href="{{-- {{route('change.status.products', $product)}} --}}" title="Editar">
-                                            Desactivado <i class="fas fa-times"></i>
-                                        </a>
-                                    </td>
-                                    {{-- @endif --}}
-                                    
-
-                                    <td>{{-- {{$product->category->name}} --}}</td>
+                                    <td>{{$subcat->categoria->nombre}}</td>
                                     <td style="width: 50px;">
 
-                                        <form action="{{-- {{ route('products.destroy', $product->id) }} --}}" method="POST">
+                                        <form action="{{ route('subcategorias.destroy', $subcat->id) }}" method="POST">
                                             @method('DELETE')
                                             @csrf
 
                     
-                                        <a class="jsgrid-button jsgrid-edit-button" href="{{-- {{route('products.edit', $product)}} --}}" title="Editar">
+                                        <a class="jsgrid-button jsgrid-edit-button" href="{{route('subcategorias.edit', $subcat)}}" title="Editar">
                                             <i class="far fa-edit"></i>
                                         </a>
                                         
@@ -106,7 +86,7 @@
                                     </form>
                                     </td>
                                 </tr>
-                                {{-- @endforeach --}}
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
