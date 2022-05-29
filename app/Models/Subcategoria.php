@@ -27,7 +27,7 @@ class Subcategoria extends Model
     }
 
     public function items(){
-        return $this->hasMany(Items::class, 'sub_categoria_id', 'id');
+        return $this->hasMany(Item::class, 'sub_categoria_id', 'id');
     }
 
     public function negocio(){

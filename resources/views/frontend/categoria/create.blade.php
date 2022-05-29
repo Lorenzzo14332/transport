@@ -1,4 +1,5 @@
 @extends('frontend.layouts.app')
+
 @section('title','Registrar Categoría')
 @section('styles')
 @endsection

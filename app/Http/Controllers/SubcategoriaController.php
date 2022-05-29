@@ -29,7 +29,7 @@ class SubcategoriaController extends Controller
 
     public function show(Subcategoria $subcategoria)
     {
-        return view('frontend.subcategoria.show', compact('categoria'));
+        return view('frontend.subcategoria.show', compact('subcategoria'));
     }
 
     public function edit(Subcategoria $subcategoria)

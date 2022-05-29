@@ -94,7 +94,7 @@
 
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="{{-- {{route('categories.index')}} --}}" class="btn btn-primary float-right">Regresar</a>
+                    <a href="{{route('categorias.index')}}" class="btn btn-primary float-right">Regresar</a>
                 </div>
             </div>
         </div>
