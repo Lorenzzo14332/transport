@@ -42,7 +42,7 @@ class GiroController extends Controller
 
     public function show(Subcategoria $giro)
     {
-        /* return view('frontend.giros.show', compact('categoria')); */
+        
     }
 
     public function edit(Subcategoria $giro)

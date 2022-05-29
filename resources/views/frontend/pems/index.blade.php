@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', 'Gestión de Giros')
+@section('title', 'Gestión de Sucategorias')
 @section('styles')
     <style type="text/css">
         .unstyled-button {
@@ -20,31 +20,30 @@
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                Giros
+                Ubicaciones
             </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Panel administrador</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Giros</li>
+                    <li class="breadcrumb-item active" aria-current="page">Ubicaciones</li>
                 </ol>
             </nav>
         </div>
         <div class="row">
             <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
-
                     <div class="card-body">
 
                         <div class="d-flex justify-content-between">
-                            <h4 class="card-title">{{ $categoria->nombre }}</h4>
+                            <h4 class="card-title">{{ $giro->nombre }}</h4>
+
                             <div class="card-header">
                                 <li class="nav-item d-none d-lg-flex">
-                                    <a class="nav-link" href="{{ route('giros.create') }}">
+                                    <a class="nav-link" href="{{ route('pems.create') }}">
                                         <span class="btn btn-info">Nueva</span>
                                     </a>
                                 </li>
                             </div>
-
                         </div>
 
                         <div class="table-responsive">
@@ -52,24 +51,25 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Nombre</th>
+                                        <th>Departamento</th>
+                                        <th>Municipio</th>
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($giros as $giro)
+                                    @foreach ($ems as $em)
                                         <tr>
-                                            <th scope="row">{{ $giro->id }}</th>
-                                            <td> {{ $giro->nombre }} </td>
-                                            <td>{{ $giro->description }}</td>
-                                            <td>
-                                                <form action="{{ route('giros.destroy', $giro->id) }}"
+                                            <th scope="row">{{ $em->id }}</th>
+                                            <td> {{ $em->departamento }} </td>
+                                            <td> {{ $em->municipio }} </td>
+                                            <td style="width: 50px;">
+                                                <form action="{{ route('pems.destroy', $em->id) }}"
                                                     method="POST">
                                                     @method('DELETE')
                                                     @csrf
 
                                                     <a class="jsgrid-button jsgrid-edit-button"
-                                                        href="{{ route('giros.edit', $giro->id) }}" title="Editar">
+                                                        href="{{ route('pems.edit', $em->id) }}" title="Editar">
                                                         <i class="far fa-edit"></i>
                                                     </a>
 
@@ -77,6 +77,7 @@
                                                         type="submit" title="Eliminar">
                                                         <i class="far fa-trash-alt"></i>
                                                     </button>
+
                                                 </form>
                                             </td>
                                         </tr>

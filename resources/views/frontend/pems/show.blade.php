@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title','Subcategoria de categoría')
+@section('title','Item de Subcategoria')
 @section('styles')
 <style type="text/css">
     .unstyled-button {
@@ -23,13 +23,13 @@
 <div class="content-wrapper">
     <div class="page-header">
         <h3 class="page-title">
-            Subcategorias que pertenecen a {{$categoria->nombre}}
+            Items que pertenecen a {{ $subcategoria->nombre }}
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{-- {{route('home')}} --}}">Panel administrador</a></li>
-                <li class="breadcrumb-item"><a href="{{route('categorias.index')}}">Categorías</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{$categoria->nombre}}</li>
+                <li class="breadcrumb-item"><a href="{{route('subcategorias.index')}}">Subcategorías</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ $subcategoria->nombre }}</li>
             </ol>
         </nav>
     </div>
@@ -40,7 +40,7 @@
                     
 
                     <div class="d-flex justify-content-between">
-                        <h4 class="card-title">Subcategoria de la categoría {{$categoria->nombre}}</h4>
+                        <h4 class="card-title">Item de la Subcategoría {{$subcategoria->nombre}}</h4>
                         <div class="card-header">
                             <li class="nav-item d-none d-lg-flex">
                                 <a class="nav-link" href="{{ route('subcategorias.create') }}">
@@ -56,26 +56,26 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Nombre</th>
-                                    <th>Categoría</th>
+                                    <th>Subcategoría</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categoria->sub_categorias as $subcat)
+                                @foreach ($subcategoria->items as $item)
                                 <tr>
-                                    <th scope="row">{{$subcat->id}}</th>
+                                    <th scope="row">{{$item->id}}</th>
                                     <td>
-                                        <a href="{{ route('subcategorias.show', $subcat) }}"> {{ $subcat->nombre }} </a>
+                                        <a href="{{ route('items.show', $item) }}"> {{ $item->nombre }} </a>
                                     </td>
-                                    <td>{{$subcat->categoria->nombre}}</td>
+                                    <td>{{ $item->sub_categorias->nombre}}</td>
                                     <td style="width: 50px;">
 
-                                        <form action="{{ route('subcategorias.destroy', $subcat->id) }}" method="POST">
+                                        <form action="{{ route('items.destroy', $item->id) }}" method="POST">
                                             @method('DELETE')
                                             @csrf
 
                     
-                                        <a class="jsgrid-button jsgrid-edit-button" href="{{route('subcategorias.edit', $subcat)}}" title="Editar">
+                                        <a class="jsgrid-button jsgrid-edit-button" href="{{route('items.edit', $item)}}" title="Editar">
                                             <i class="far fa-edit"></i>
                                         </a>
                                         
@@ -94,7 +94,7 @@
 
                 </div>
                 <div class="card-footer text-muted">
-                    <a href="{{route('categorias.index')}}" class="btn btn-primary float-right">Regresar</a>
+                    <a href="{{route('subcategorias.index')}}" class="btn btn-primary float-right">Regresar</a>
                 </div>
             </div>
         </div>
