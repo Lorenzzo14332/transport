@@ -65,17 +65,17 @@
                                 <tr>
                                     <th scope="row">{{$item->id}}</th>
                                     <td>
-                                        <a href="{{ route('subcategorias.show', $item) }}"> {{ $item->nombre }} </a>
+                                        <a href="{{ route('items.show', $item) }}"> {{ $item->nombre }} </a>
                                     </td>
                                     <td>{{ $item->sub_categorias->nombre}}</td>
                                     <td style="width: 50px;">
 
-                                        <form action="{{ route('subcategorias.destroy', $item->id) }}" method="POST">
+                                        <form action="{{ route('items.destroy', $item->id) }}" method="POST">
                                             @method('DELETE')
                                             @csrf
 
                     
-                                        <a class="jsgrid-button jsgrid-edit-button" href="{{route('subcategorias.edit', $item)}}" title="Editar">
+                                        <a class="jsgrid-button jsgrid-edit-button" href="{{route('items.edit', $item)}}" title="Editar">
                                             <i class="far fa-edit"></i>
                                         </a>
                                         
