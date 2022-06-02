@@ -51,10 +51,23 @@
       </a>
       <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
+          <a href="{{ route('graficos.index') }}">
+            <i class="bi bi-circle"></i><span>Graficos</span>
+          </a>
+        </li>
+
+        <li>
           <a href="{{ route('pems.index') }}">
             <i class="bi bi-circle"></i><span>Ubicaciones</span>
           </a>
         </li>
+
+        <li>
+          <a href="{{ route('ingresos.index') }}">
+            <i class="bi bi-circle"></i><span>Ingresos</span>
+          </a>
+        </li>
+
       </ul>
     </li>
 
