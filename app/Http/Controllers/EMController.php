@@ -15,7 +15,7 @@ class EMController extends Controller
 {
     public function index()
     {
-        $giro = Subcategoria::where('id', 73)
+        $giro = Subcategoria::where('id', 75)
             ->first();
 
         $ems = DB::table('sedes_giros')
@@ -23,7 +23,7 @@ class EMController extends Controller
             ->join('sub_categorias as dep', 'mun.sub_categoria_id', '=', 'dep.id')
             ->join('sub_categorias as te', 'sedes_giros.tipo_extaccion_id', '=', 'te.id')
             ->join('sub_categorias as cla', 'sedes_giros.clas_min_id', '=', 'cla.id')
-            ->where('sedes_giros.planta_id', 73)
+            ->where('sedes_giros.planta_id', 75)
             ->get(
                 [
                     'dep.nombre as departamento', 'mun.nombre as municipio',
@@ -55,7 +55,7 @@ class EMController extends Controller
     public function store(Request $request)
     {
         $ubicacion = new Giro;
-        $ubicacion->planta_id = 73;
+        $ubicacion->planta_id = 75;
         $ubicacion->sede_id = $request->get('sede_id');
         $ubicacion->tipo_extaccion_id = $request->get('tipo_extaccion_id');
         $ubicacion->clas_min_id = $request->get('clas_min_id');
@@ -67,7 +67,7 @@ class EMController extends Controller
 
     public function show($id)
     {
-        
+
     }
 
     public function edit($id)
@@ -87,10 +87,10 @@ class EMController extends Controller
 
         $ubicacion->orden = $request->input('orden');
         $ubicacion->sede_id = $request->input('sede_id');
-        $ubicacion->planta_id = 73;
+        $ubicacion->planta_id = 75;
         $ubicacion->clas_min_id = $request->input('clas_min_id');
         $ubicacion->tipo_extaccion_id = $request->input('tipo_extaccion_id');
-        
+
         $ubicacion->update();
         return redirect()->route('pems.index');
 
