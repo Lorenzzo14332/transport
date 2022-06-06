@@ -16,21 +16,12 @@ class IngresoController extends Controller
     public function index()
     {
         $pminerias = Ingreso::where('sede_id', 1)->get();
-        return view(
-            'frontend.pems.ingresos.index',
+        return view('frontend.pems.ingresos.index',
             [
                 'pminerias' => $pminerias
             ]
         );
     }
-
-    public function minerales(Request $request)
-    {
-        $data['minerales'] = Subcategoria::where("categoria_id", $request->t_mineral)
-            ->get(["nombre", "id"]);
-        return response()->json($data);
-    }
-
 
     public function create()
     {

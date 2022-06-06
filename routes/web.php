@@ -8,6 +8,7 @@ use App\Http\Controllers\GiroController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\SubcategoriaController;
 use App\Http\Controllers\IngresoController;
+use App\Http\Controllers\Ingreso1Controller;
 use App\Http\Controllers\GraficosController;
 
 Route::get('/', function () {
@@ -23,5 +24,7 @@ Route::resource('giros', GiroController::class);
 Route::resource('categorias', CategoriaController::class);
 Route::resource('subcategorias', SubcategoriaController::class);
 Route::post('minerales', [IngresoController::class, 'minerales'])->name('minerales');
+Route::post('tipos', [Ingreso1Controller::class, 'tipos'])->name('tipos');
 Route::resource('ingresos', IngresoController::class);
+Route::resource('primas_ingresos', Ingreso1Controller::class);
 Route::get('graficos', [GraficosController::class, 'index'])->name('graficos.index');
