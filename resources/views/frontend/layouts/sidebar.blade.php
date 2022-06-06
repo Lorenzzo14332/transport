@@ -90,7 +90,7 @@
         </li>
 
         <li>
-          <a href="{{ route('ingresos.index') }}">
+          <a href="{{ route('primas_ingresos.index') }}">
             <i class="bi bi-circle"></i><span>Ingresos</span>
           </a>
         </li>
