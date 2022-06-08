@@ -16,7 +16,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Panel administrador</a></li>
-                <li class="breadcrumb-item"><a href="{{route('primas.index')}}">Ubicaciones</a></li>
+                <li class="breadcrumb-item"><a href="{{route('pems.index')}}">Ubicaciones</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Edición de Ubicaciones</li>
             </ol>
         </nav>
@@ -30,7 +30,7 @@
                         <h4 class="card-title">Edición de Ubicaciones</h4>
                     </div>
 
-                    <form action="{{ route('primas.update', $ubicacion->id) }}" method="POST">
+                    <form action="{{ route('pems.update', $ubicacion->id) }}" method="POST">
                         @method('PUT')
                         @csrf
 
@@ -60,6 +60,32 @@
                             <br>
 
                             <div class="form-group">
+                                <label for="tipo_extaccion_id">Tipo de Extacci&oacute;n</label>
+                                <select class="form-control" name="tipo_extaccion_id" id="tipo_extaccion_id">
+                                    @foreach ($t_extacciones as $te)
+                                        <option value="{{ $te->id }}"
+                                            @if ($te->id == $ubicacion->tipo_extaccion_id) selected @endif>{{ $te->nombre }}</option>
+                                    @endforeach
+                                </select>
+                                @error('tipo_extaccion_id')
+                                    <p class="text-primary bg-red">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="clas_min_id">Clasificaci&oacute;n</label>
+                                <select class="form-control" name="clas_min_id" id="clas_min_id">
+                                    @foreach ($clas as $cla)
+                                        <option value="{{ $cla->id }}"
+                                            @if ($cla->id == $ubicacion->clas_min_id) selected @endif>{{ $cla->nombre }}</option>
+                                    @endforeach
+                                </select>
+                                @error('clas_min_id')
+                                    <p class="text-primary bg-red">{{ $message }}</p>
+                                @enderror
+                            </div>
+                            <br>
+                            <div class="form-group">
                                 <label for="nombre">Orden</label>
                                 <input type="text" class="form-control" name="orden" id="orden" placeholder="Orden"
                                     value="{{ $ubicacion->orden }}">
@@ -67,12 +93,10 @@
                                     <p class="text-primary bg-red">{{ $message }}</p>
                                 @enderror
                             </div>
-
-
                     <br>
 
-                     <button type="submit" class="btn btn-primary mr-2">Editar</button>
-                     <a href="{{route('primas.index')}}" class="btn btn-danger mr-2">
+                     <button type="submit" class="btn btn-primary mr-2">Actualizar</button>
+                     <a href="{{route('pems.index')}}" class="btn btn-danger mr-2">
                         Cancelar
                      </a>
                     </form>
@@ -84,6 +108,7 @@
 @endsection
 @section('scripts')
 <script src="{{ asset('assets/js/data-table.js') }}"></script>
+<script src="{{ asset('assets/js/dropify.js') }}"></script>
 @endsection
 
 @push('scripts')
