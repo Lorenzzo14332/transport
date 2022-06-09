@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('frontend.layouts.template');
 
 });
+Route::group([
+    'middleware' => 'auth'
+], function () {
 
 Route::post('municipios', [EMController::class, 'municipios'])->name('municipios');
 Route::resource('pems', EMController::class);
@@ -28,3 +31,8 @@ Route::post('tipos', [Ingreso1Controller::class, 'tipos'])->name('tipos');
 Route::resource('ingresos', IngresoController::class);
 Route::resource('primas_ingresos', Ingreso1Controller::class);
 Route::get('graficos', [GraficosController::class, 'index'])->name('graficos.index');
+});
+Auth::routes();
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
