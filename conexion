@@ -1,0 +1,5 @@
+<?php
+$conexion=mysql_init();
+mysql_ssl_set($conexion,NULL,NULL, "ssl/BaltimoreCyberTrustRoot.crt.pem", NULL, NULL);
+mysqlli_real_connect($conexion, "database-server-transport.mysql.database.azure.com", "administrador@database-server-transport", "Alecks66@", "seminario", "3306",
+MYSQL_CLIENT_SSL) or die ("Error al conectar" . mysql_error());

@@ -44,7 +44,7 @@
 </div>
 
 <div class="form-group">
-    <h4 class="card-title">Detalles de compra</h4>
+    <h4 class="card-title">Detalle</h4>
     <div class="table-responsive col-md-12">
         <table id="detalles" class="table table-striped">
             <thead>
