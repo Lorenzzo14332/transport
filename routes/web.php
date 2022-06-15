@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('frontend.layouts.template');
 
 });
+
 Route::group([
     'middleware' => 'auth'
 ], function () {
