@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Pages / Register - NiceAdmin Bootstrap Template</title>
+    <title>Registro</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -53,7 +53,7 @@
                             <div class="d-flex justify-content-center py-4">
                                 <a href="index.html" class="logo d-flex align-items-center w-auto">
                                     <img src="assets/img/logo.png" alt="">
-                                    <span class="d-none d-lg-block">NiceAdmin</span>
+                                    <span class="d-none d-lg-block">Transport</span>
                                 </a>
                             </div><!-- End Logo -->
 
@@ -62,8 +62,8 @@
                                 <div class="card-body">
 
                                     <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
-                                        <p class="text-center small">Enter your personal details to create account</p>
+                                        <h5 class="card-title text-center pb-0 fs-4">Crea una cuenta</h5>
+                                        <p class="text-center small">Ingrese sus datos personales para crear una cuenta  </p>
                                     </div>
 
                                     <form method="POST" action="{{ route('register') }} "
@@ -71,7 +71,7 @@
                                         @csrf
 
                                         <div class="col-12">
-                                            <label for="name" class="form-label">Your Name</label>
+                                            <label for="name" class="form-label">Nombre</label>
                                             <input type="text" name="name" class="form-control" id="name" required
                                                 @error('name') is-invalid @enderror" name="name"
                                                 value="{{ old('name') }}">
@@ -81,13 +81,13 @@
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
-                                            <div class="invalid-feedback">Please, enter your name!</div>
+                                            <div class="invalid-feedback">Por favor, escriba su nombre!</div>
                                         </div>
 
                                         <div class="col-12">
                                             <label id="email" for="email"
                                                 class="form-label @error('email') is-invalid @enderror"
-                                                value="{{ old('email') }}">Your Email</label>
+                                                value="{{ old('email') }}">Correo electrónico</label>
                                             <input type="email" name="email" class="form-control" id="email" required>
 
                                             @error('email')
@@ -95,14 +95,14 @@
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
-                                            <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+                                            <div class="invalid-feedback">Ingrese una dirección de correo electrónico válida!</div>
                                         </div>
 
 
 
                                         <div class="col-12">
                                             <label for="password" name="password" class="form-label"
-                                                id="yourPassword" required>Password</label>
+                                                id="yourPassword" required>Contraseña</label>
 
                                             <input type="password" name="password" class="form-control"
                                                 id="yourPassword" @error('password') is-invalid @enderror"
@@ -112,17 +112,17 @@
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
-                                            <div class="invalid-feedback">Please enter your password!</div>
+                                            <div class="invalid-feedback">Por favor, introduzca su contraseña!</div>
                                         </div>
 
                                         <div class="col-12">
                                             <label for="password-confirm" name="password" class="form-label"
-                                                id="yourPassword" required>Confirm Password</label>
+                                                id="yourPassword" required>Confirmar contraseña</label>
 
                                             <input type="password" name="password_confirmation" class="form-control"
                                                 id="password-confirm" @error('password') is-invalid @enderror"
                                                 name="password" required>
-                                            <div class="invalid-feedback">Please enter your password!</div>
+                                            <div class="invalid-feedback">Por favor, introduzca su contraseña!</div>
                                         </div>
 
 
@@ -131,18 +131,17 @@
                                             <div class="form-check">
                                                 <input class="form-check-input" name="terms" type="checkbox" value=""
                                                     id="acceptTerms" required>
-                                                <label class="form-check-label" for="acceptTerms">I agree and accept the
-                                                    <a href="#">terms and conditions</a></label>
-                                                <div class="invalid-feedback">You must agree before submitting.</div>
+                                                <label class="form-check-label" for="acceptTerms">Estoy de acuerdo y acepto
+                                                    <a href="#">Términos y condiciones</a></label>
+                                                <div class="invalid-feedback">Debe aceptar los términos y condiciones antes de enviar.</div>
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">Create Account</button>
+                                            <button class="btn btn-primary w-100" type="submit">Crear una cuenta    </button>
                                         </div>
                                         <div class="col-12">
-                                            <p class="small mb-0">Already have an account? <a
-                                                    href="pages-login.html">Log in</a></p>
-                                        </div>
+                                            <p class="small mb-0">Ya tienes una cuenta? <a
+                                                    href="login">Iniciar sesión</div>
                                     </form>
 
                                 </div>
@@ -153,7 +152,7 @@
                                 <!-- You can delete the links only if you purchased the pro version. -->
                                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-                                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                    
                             </div>
 
                         </div>
