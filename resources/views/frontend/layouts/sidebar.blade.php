@@ -13,7 +13,7 @@
 
     <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-menu-button-wide"></i><span>Administracion de Giros de Negocio</span><i class="bi bi-chevron-down ms-auto"></i>
+            <i class="bi bi-menu-button-wide"></i><span>Administración Control</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
@@ -80,7 +80,7 @@
 
     <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-            <i class="bi bi-journal-text"></i><span>Planta Extracción Materia Prima</span><i
+            <i class="bi bi-journal-text"></i><span>Planta de Proceso Materia Prima</span><i
                 class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
@@ -108,7 +108,7 @@
       <li class="nav-item dropdown">
           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false" v-pre>
-              {{ Auth::user()->name }}
+              {{  Auth::user()->name }}
           </a>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();

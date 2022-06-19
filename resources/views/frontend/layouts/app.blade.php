@@ -47,7 +47,7 @@
   <main id="main" class="main">
 
     <section class="section dashboard">
-      
+
       @yield('content')
     
     </section>

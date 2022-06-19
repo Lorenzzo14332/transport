@@ -22,7 +22,7 @@
     <div class="content-wrapper">
         <div class="page-header">
             <h3 class="page-title">
-                Compras
+            Ingresos
             </h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">

@@ -4,7 +4,7 @@
     <div class="contaniner">
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">EXTRACCIÓN MINERA</h3>
+                <h3 class="card-title">EXTRACCIÓN MINERAA</h3>
             </div>
             <div class="container">
                 <div id="column">
@@ -26,11 +26,7 @@ Highcharts.chart('column', {
     },
     title: {
         align: 'left',
-        text: 'Browser market shares. January, 2018'
-    },
-    subtitle: {
-        align: 'left',
-        text: 'Click the columns to view versions. Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
+        text: 'DETALLE EXTRACCION MINERA'
     },
     accessibility: {
         announceNewData: {
@@ -66,7 +62,7 @@ Highcharts.chart('column', {
 
     series: [
         {
-            name: "Browsers",
+            name: "Extraccion",
             colorByPoint: true,
             data: <?= $data ?>
         }

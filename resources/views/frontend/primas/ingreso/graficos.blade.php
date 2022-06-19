@@ -4,7 +4,7 @@
     <div class="contaniner">
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">EXTRACCIÓN MINERA</h3>
+                <h3 class="card-title">PLANTA DE PROCESO DE MATERIA PRIMA</h3>
             </div>
             <div class="container">
                 <div id="column">

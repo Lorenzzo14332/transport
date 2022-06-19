@@ -2,7 +2,7 @@
     <div class="form-group col-md-12">
         <div class="form-group">
             <h4 class="text-center">
-                <mark class="alert-success">{{ $sede->municipio }}</mark>
+                {{-- <mark class="alert-success">{{ $sede->municipio }}</mark> --}}
             </h4>
         </div>
     </div>

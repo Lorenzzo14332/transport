@@ -1,6 +1,8 @@
 <div class="form-row">
+    
     <div class="form-group col-md-6">
         <div class="form-group">
+
             <label for="t_mineral">Tipo de Mineral</label>
             <select class="form-control" name="t_mineral" id="t_mineral">
                 <option value="" disabled selected>Seleccione</option>
@@ -14,10 +16,14 @@
     <br>
 
     <div class="form-group col-md-6">
+       
         <div class="form-group">
+
             <label for="mineral_id">Mineral</label>
             <select class="form-control" name="mineral_id" id="mineral_id">
                 <option value="" disabled selected>Seleccione</option>
+                
+
             </select>
         </div>
     </div>
